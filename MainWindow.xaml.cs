@@ -78,9 +78,9 @@ namespace ChatBot_DINT
             MessageBox.Show("Conexion correcta con el servidor del bot");
         }
 
+        private void itemsControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
 
-       
-
-      
+        }
     }
 }

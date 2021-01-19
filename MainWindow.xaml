@@ -79,13 +79,13 @@
         <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
 
             <TextBox x:Name="mensajeTextBox" Height="30" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" MinWidth="340" />
-            <Button  Width="35"  HorizontalAlignment="Right" Height="30" IsDefault="True">
+            <Button  Width="35"  HorizontalAlignment="Right" Height="30" IsDefault="True" >
                 <Image Source="send.png"/>
             </Button>
         </StackPanel>
 
         <ScrollViewer DockPanel.Dock="Left" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <ItemsControl x:Name="itemsControl" DockPanel.Dock="Left" Background="Beige"  ItemsSource="{Binding}">
+        <ItemsControl x:Name="itemsControl" DockPanel.Dock="Left" Background="Beige"  ItemsSource="{Binding}" DataContextChanged="itemsControl_DataContextChanged">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
