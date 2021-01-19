@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatBot_DINT", "ChatBot_DINT.csproj", "{695788B1-9FF0-44BB-A112-9019789BF989}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{695788B1-9FF0-44BB-A112-9019789BF989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695788B1-9FF0-44BB-A112-9019789BF989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695788B1-9FF0-44BB-A112-9019789BF989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695788B1-9FF0-44BB-A112-9019789BF989}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E8CDC26-E0D9-45F3-9A8C-69EF9EF1C7F6}
+	EndGlobalSection
+EndGlobal
