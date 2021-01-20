@@ -18,7 +18,7 @@ namespace ChatBot_DINT
             {
                 new KeyGesture(Key.N,ModifierKeys.Control)
             }
-            
+
             );
 
         public static readonly RoutedUICommand saveConversation = new RoutedUICommand
@@ -69,5 +69,17 @@ namespace ChatBot_DINT
 
       );
 
+
+        public static readonly RoutedUICommand enviar = new RoutedUICommand
+     (
+         "Comprobar Conexión",
+         "Check connection",
+         typeof(CustomCommands),
+     new InputGestureCollection()
+     {
+                new KeyGesture(Key.Enter)
+     }
+
+     );
     }
 }

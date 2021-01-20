@@ -31,8 +31,7 @@ namespace ChatBot_DINT
           
             InitializeComponent();
               items = new ObservableCollection<string>();
-            items.Add("item1");
-            items.Add("item2");
+            scrollViewer.ScrollToEnd();
             itemsControl.DataContext = items;
         }
 
@@ -40,6 +39,7 @@ namespace ChatBot_DINT
         {
             if (items.Count != 0)
             {
+                newConvButton.IsEnabled = true;
                  items.Clear();
             }
            
@@ -67,6 +67,9 @@ namespace ChatBot_DINT
     }
         private void CommandBinding_Executed_Config(object sender, ExecutedRoutedEventArgs e)
         {
+            Config config = new Config();
+            config.Owner = this;
+            config.ResizeMode = ResizeMode.NoResize;
 
         }
         private void CommandBinding_Executed_Exit(object sender, ExecutedRoutedEventArgs e)
@@ -81,6 +84,20 @@ namespace ChatBot_DINT
         private void itemsControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
 
+        }
+
+        private void CommandBinding_Executed_Enviar(object sender, ExecutedRoutedEventArgs e)
+        {
+            string texto;
+            texto = mensajeTextBox.Text;
+            items.Add(texto);
+        }
+
+        private void EviarButton_Click(object sender, RoutedEventArgs e)
+        {
+            string texto;
+            texto = mensajeTextBox.Text;
+            items.Add(texto);
         }
     }
 }
