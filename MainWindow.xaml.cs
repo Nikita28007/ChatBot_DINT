@@ -67,13 +67,14 @@ namespace ChatBot_DINT
     }
         private void CommandBinding_Executed_Config(object sender, ExecutedRoutedEventArgs e)
         {
-
+            string color;
             Config config = new Config();
             config.Owner = this;
             config.ResizeMode = ResizeMode.NoResize;
             config.Show();
+          //itemsControl.Background = Properties.Settings.Default.colorFondo;
 
-            
+
 
 
         }
@@ -86,10 +87,7 @@ namespace ChatBot_DINT
             MessageBox.Show("Conexion correcta con el servidor del bot");
         }
 
-        private void itemsControl_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
+        
 
         private void CommandBinding_Executed_Enviar(object sender, ExecutedRoutedEventArgs e)
         {

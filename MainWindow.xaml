@@ -20,8 +20,8 @@
 
 
     </Window.CommandBindings>
-    
-    
+
+
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Archivo" >
@@ -87,10 +87,10 @@
         </StackPanel>
 
         <ScrollViewer x:Name="scrollViewer" DockPanel.Dock="Left" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="itemsControl" DockPanel.Dock="Left" Background="{Binding Source={x:Static properties:Settings.Default},Path=colorFondo,Mode=OneWay}"  ItemsSource="{Binding}" DataContextChanged="itemsControl_DataContextChanged">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
+            <ItemsControl x:Name="itemsControl" DockPanel.Dock="Left" Background="{Binding Source={x:Static properties:Settings.Default},Path=colorFondo,Mode=OneWay}"  ItemsSource="{Binding}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
                             <Border BorderThickness="2" BorderBrush="Black" CornerRadius="3" Margin="0,0,0,10" Width="auto" HorizontalAlignment="Left">
                                 <StackPanel x:Name="colorUser" Orientation="Vertical" Background="{Binding Source={x:Static properties:Settings.Default},Path=colorUser,Mode=OneWay}" >
                                     <Image Source="hombre.png" Width="20" Height="30" HorizontalAlignment="Left"/>
@@ -107,11 +107,12 @@
                                 </StackPanel>
                             </Border>
                         </StackPanel>
-                    
-                </DataTemplate>
-                
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+
+                    </DataTemplate>
+
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
         </ScrollViewer>
 
 
