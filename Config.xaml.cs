@@ -27,14 +27,19 @@ namespace ChatBot_DINT
             colorBotComboBox.ItemsSource = typeof(Colors).GetProperties();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void aceptarButton_Click(object sender, RoutedEventArgs e)
         {
             colorBotComboBox.Text = Properties.Settings.Default.colorRobot;
             colorFondoComboBox.Text = Properties.Settings.Default.colorFondo;
             colorUserComboBox.Text = Properties.Settings.Default.colorUser;
 
+            Properties.Settings.Default.Save();
+            this.Close();
+        }
 
-
+        private void cancelarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
