@@ -31,7 +31,7 @@ namespace ChatBot_DINT
         {
             colorBotComboBox.Text = Properties.Settings.Default.colorRobot;
             colorFondoComboBox.Text = Properties.Settings.Default.colorFondo;
-            colorUserComboBox.SelectedItem.va = Properties.Settings.Default.colorUser;
+            colorUserComboBox.Text = Properties.Settings.Default.colorUser;
 
 
 
