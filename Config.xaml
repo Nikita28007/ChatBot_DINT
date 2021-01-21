@@ -5,8 +5,82 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatBot_DINT"
         mc:Ignorable="d"
-        Title="Config" Height="450" Width="624.06">
+        Title="Config" Height="297.268" Width="443.017">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="9,27,0,0"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="0,20,0,0"/>
+            <Setter Property="Width" Value="280"/>
+        </Style>
+
+
+    </Window.Resources>
+  
     <Grid>
+       
         
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel  Grid.Column="0" VerticalAlignment="Center">
+            <TextBlock  Margin="9,0,0,0" Text="Color de fondo"></TextBlock>
+            <TextBlock  Text="Color de usuario"></TextBlock>
+            <TextBlock  Text="Color de bot"></TextBlock>
+            <TextBlock  Text="sexo del usuario"></TextBlock>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <ComboBox x:Name="colorFondoComboBox" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="colorUserComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="colorBotComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="SexoComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <ComboBoxItem>Hombre</ComboBoxItem>
+                <ComboBoxItem>Mujer</ComboBoxItem>
+            </ComboBox>
+            
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Height="18" >
+
+            <Button  Content="Aceptar" Width="100" Height="18" VerticalAlignment="Top" Click="Button_Click"></Button>
+            <Button Margin="10,0,10,0" Width="100" Content="Cancelar"/>
+        </StackPanel>
+
+
     </Grid>
 </Window>

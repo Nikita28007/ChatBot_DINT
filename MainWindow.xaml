@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatBot_DINT"
         mc:Ignorable="d"
+        xmlns:properties="clr-namespace:ChatBot_DINT.Properties"
         Icon="robot.ico"
         Title="ChatBot" MinWidth="385" Height="575" MinHeight="340" Width="385">
     <Window.CommandBindings>
@@ -64,7 +65,7 @@
                     <Image Source="save.png" ToolTip="Guardar Conversación"/>
                 </Button>
                 <Separator/>
-                <Button >
+                <Button Command="local:CustomCommands.config" >
                     <Image Source="config.ico"/>
                 </Button>
                 <Button  Command="local:CustomCommands.connection">
@@ -86,12 +87,12 @@
         </StackPanel>
 
         <ScrollViewer x:Name="scrollViewer" DockPanel.Dock="Left" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <ItemsControl x:Name="itemsControl" DockPanel.Dock="Left" Background="Beige"  ItemsSource="{Binding}" DataContextChanged="itemsControl_DataContextChanged">
+            <ItemsControl x:Name="itemsControl" DockPanel.Dock="Left" Background="{Binding Source={x:Static properties:Settings.Default},Path=colorFondo,Mode=OneWay}"  ItemsSource="{Binding}" DataContextChanged="itemsControl_DataContextChanged">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                             <Border BorderThickness="2" BorderBrush="Black" CornerRadius="3" Margin="0,0,0,10" Width="auto" HorizontalAlignment="Left">
-                                <StackPanel Orientation="Vertical" Background="LightGoldenrodYellow">
+                                <StackPanel x:Name="colorUser" Orientation="Vertical" Background="{Binding Source={x:Static properties:Settings.Default},Path=colorUser,Mode=OneWay}" >
                                     <Image Source="hombre.png" Width="20" Height="30" HorizontalAlignment="Left"/>
                                     <TextBlock Text="Usuario"/>
                                     <TextBlock Text="{Binding ElementName=mensajeTextBox, Path=text}"/>
@@ -99,7 +100,7 @@
                             </Border>
 
                             <Border BorderThickness="2" BorderBrush="Black" Width="auto" CornerRadius="3" HorizontalAlignment="Right">
-                                <StackPanel Orientation="Vertical" Background="LightBlue">
+                                <StackPanel x:Name="colorRobot" Orientation="Vertical" Background="{Binding Source={x:Static properties:Settings.Default},Path=colorRobot,Mode=OneWay}">
                                     <Image Source="robot.png" Width="20" Height="30" HorizontalAlignment="Left"/>
                                     <TextBlock Text="Robot" HorizontalAlignment="Left"/>
                                     <TextBlock Text="Lo siento, estoy un poco cansado para hablar" HorizontalAlignment="Right"/>

@@ -67,9 +67,14 @@ namespace ChatBot_DINT
     }
         private void CommandBinding_Executed_Config(object sender, ExecutedRoutedEventArgs e)
         {
+
             Config config = new Config();
             config.Owner = this;
             config.ResizeMode = ResizeMode.NoResize;
+            config.Show();
+
+            
+
 
         }
         private void CommandBinding_Executed_Exit(object sender, ExecutedRoutedEventArgs e)
